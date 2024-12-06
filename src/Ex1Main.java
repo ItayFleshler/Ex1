@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class Ex1Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String num1 = "", num2 = "", quit = "quit";
+        String num1, num2, quit = "quit";
         String[] results;
-        String baseres = "";
+        String baseres;
         int base, addition, multiplication;
 
         while (true) {
@@ -60,12 +60,7 @@ public class Ex1Main {
             System.out.println(num1 + " + " + num2 + " = " + Ex1.int2Number(addition, base) + "b" + baseres);
             System.out.println(num1 + " * " + num2 + " = " + Ex1.int2Number(multiplication, base) + "b" + baseres);
 
-            results = new String[]{
-                    num1,
-                    num2,
-                    Ex1.int2Number(addition, base) + "b" + baseres,
-                    Ex1.int2Number(multiplication, base) + "b" + baseres
-            };
+            results = new String[] {num1, num2, Ex1.int2Number(addition, base) + "b" + baseres, Ex1.int2Number(multiplication, base) + "b" + baseres};
 
             int maxIndex = Ex1.maxIndex(results);
             if (maxIndex == -1) {

@@ -148,6 +148,4 @@ public class Ex1Test {
         assertEquals("101", Ex1.int2Number(5, 2), "Binary representation failed");
         assertEquals("F", Ex1.int2Number(15, 16), "Hexadecimal representation failed");
     }
-
-
 }
