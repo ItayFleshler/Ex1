@@ -21,38 +21,62 @@ public class Ex1 {
 
     public static boolean isNumber(String a) {
         if (a == null || a.isEmpty()) {
+            // Return false for null or empty strings
+            return false;
+        }
+
+        if (a.contains(" ")) {
+            return false;
+        }
+
+        if (!a.equals(a.trim())) {
             return false;
         }
 
         int bIndex = a.indexOf('b');
-        if (bIndex == -1) { // If there is no b in the string.
-            return a.chars().allMatch(Character::isDigit); // returning the string as decimal.
+        if (bIndex == -1) {
+            // If 'b' is missing, check if the entire string represents a valid decimal number
+            return a.chars().allMatch(Character::isDigit);
         }
 
-        if (bIndex == 0 || bIndex == a.length() - 1) { // If the 'b' is in the start or in the end of the string.
+        if (bIndex == 0 || bIndex == a.length() - 1) {
+            // Return false if 'b' is at the start or end of the string
             return false;
         }
-        String numberPart = a.substring(0, bIndex).toUpperCase(); // Saving the number part form start to b.
-        String basePart = a.substring(bIndex + 1).toUpperCase(); // Saving the base after b.
-        if(!numberPart.equals(a.substring(0, bIndex))) // If the after Upper case the string isn't the same as it was before
+
+        // Split the string into number part (before 'b') and base part (after 'b')
+        String numberPart = a.substring(0, bIndex).toUpperCase(); // Convert number part to uppercase for uniformity
+        String basePart = a.substring(bIndex + 1).toUpperCase(); // Convert base part to uppercase for uniformity
+
+        // Ensure the original number part matches its uppercase version (to reject invalid characters)
+        if (!numberPart.equals(a.substring(0, bIndex))) {
             return false;
+        }
+
         int base;
         try {
-            base = Integer.parseInt(basePart, 17); // Make the base Int.
+            // Parse the base part as an integer in hexadecimal
+            base = Integer.parseInt(basePart, 17);
         } catch (NumberFormatException e) {
+            // Return false if the base part cannot be parsed
             return false;
         }
+
+        // Check if the base is within the valid range [2,16]
         if (base < 2 || base > 16) {
             return false;
         }
 
+        // Validate each character in the number part against the specified base
         for (char c : numberPart.toCharArray()) {
-            int digitValue = Character.digit(c, base); // Make each character in the number part as the base.
+            int digitValue = Character.digit(c, base);
             if (digitValue == -1 || digitValue >= base) {
+                // Return false if any character is invalid or exceeds the base
                 return false;
             }
         }
 
+        // The string is a valid number in the specified format
         return true;
     }
 
@@ -77,7 +101,7 @@ public class Ex1 {
         String numberPart = num.substring(0, bIndex).toUpperCase(); // Extract number part and make uppercase
         String basePart = num.substring(bIndex + 1).toUpperCase(); // Extract base part and make uppercase
 
-        int base = Integer.parseInt(basePart, 17); // Parse the base part in hexadecimal notation
+        int base = Integer.parseInt(basePart, 17); // Parse the base part in hexadecimal.
         int decimalValue = 0; // Initialize the result in decimal
 
         // Convert the number part to a decimal value using the given base
