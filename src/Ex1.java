@@ -144,7 +144,7 @@ public class Ex1 {
 
             num /= base; // Reduce the number
         }
-        if (Integer.valueOf(base) < 10)
+        if (base < 10)
             return output.reverse() + "b" + base;
         else
             return output.reverse() + "b" + (char) ('A' + (base - 10));
