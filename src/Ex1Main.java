@@ -39,18 +39,17 @@ public class Ex1Main {
                     int base = sc.nextInt(); // Read base as integer
                     sc.nextLine(); // Clear the scanner buffer
                     // Convert base to string format for bases > 9
-                    String baseStr = base > 9 ? String.valueOf((char) ('A' + (base - 10))) : String.valueOf(base);
 
                     // Perform addition and display result
                     int addition = Ex1.number2Int(num1) + Ex1.number2Int(num2);
-                    System.out.println(num1 + " + " + num2 + " = " + Ex1.int2Number(addition, base) + "b" + baseStr);
+                    System.out.println(num1 + " + " + num2 + " = " + Ex1.int2Number(addition, base) );
 
                     // Perform multiplication and display result
                     int multiplication = Ex1.number2Int(num1) * Ex1.number2Int(num2);
-                    System.out.println(num1 + " * " + num2 + " = " + Ex1.int2Number(multiplication, base) + "b" + baseStr);
+                    System.out.println(num1 + " * " + num2 + " = " + Ex1.int2Number(multiplication, base));
 
                     // Prepare an array of results
-                    String[] results = {num1, num2, Ex1.int2Number(addition, base) + "b" + baseStr, Ex1.int2Number(multiplication, base) + "b" + baseStr};
+                    String[] results = {num1, num2, Ex1.int2Number(addition, base) , Ex1.int2Number(multiplication, base)};
                     int maxIdx = Ex1.maxIndex(results); // Find the index of the maximum value
 
                     // Check if a valid maximum was found and display it

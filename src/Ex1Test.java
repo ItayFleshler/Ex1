@@ -14,15 +14,13 @@ public class Ex1Test {
     void computeNumberTest() {
         String s2 = "1011b2";
         int v = Ex1.number2Int(s2);
-        assertEquals(11, v);
-
+        assertEquals(v, 11);
         String s10 = "1011bA";
         v = Ex1.number2Int(s10);
-        s2 = Ex1.int2Number(v, 10);
+        s2 = Ex1.int2Number(v, 2);
         int v2 = Ex1.number2Int(s2);
         assertEquals(v, v2);
-
-        Assertions.assertTrue(Ex1.equals(s10, s2));
+        assertTrue(Ex1.equals(s10, s2));
     }
 
     @Test
@@ -44,11 +42,11 @@ public class Ex1Test {
     @Test
     void int2NumberTest() {
         assertEquals("0", Ex1.int2Number(0, 10));
-        assertEquals("10", Ex1.int2Number(2, 2));
-        assertEquals("F", Ex1.int2Number(15, 16));
-        assertEquals("7", Ex1.int2Number(7, 8));
-        assertEquals("101", Ex1.int2Number(26, 5));
-        assertEquals("4", Ex1.int2Number(4, 8));
+        assertEquals("10b2", Ex1.int2Number(2, 2));
+        assertEquals("FbG", Ex1.int2Number(15, 16));
+        assertEquals("7b8", Ex1.int2Number(7, 8));
+        assertEquals("101b5", Ex1.int2Number(26, 5));
+        assertEquals("4b8", Ex1.int2Number(4, 8));
 
         // Invalid inputs
         assertEquals("", Ex1.int2Number(-1, 10)); // Negative number
@@ -145,7 +143,7 @@ public class Ex1Test {
 
     @Test
     void int2NumberAdditionalTests() {
-        assertEquals("101", Ex1.int2Number(5, 2), "Binary representation failed");
-        assertEquals("F", Ex1.int2Number(15, 16), "Hexadecimal representation failed");
+        assertEquals("101b2", Ex1.int2Number(5, 2), "Binary representation failed");
+        assertEquals("FbG", Ex1.int2Number(15, 16), "Hexadecimal representation failed");
     }
 }
