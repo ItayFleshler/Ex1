@@ -2,7 +2,7 @@ Ex1 – Number Formatter and Calculator
 
 Overview
 
-This project is a solution for the Ex1 assignment, which focuses on implementing a number formatting converter and calculator. The algorithm maintains numbers in string format with the structure <number><b><base> , with <base> in the set {2, 3, 4, 5, 6, 7, 8, 9, a, b, c}.
+This project is a solution for the Ex1 assignment, which focuses on implementing a number formatting converter and calculator. The algorithm maintains numbers in string format with the structure <number><b><base> , with <base> in the set {2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G}.
 
 Examples
 
