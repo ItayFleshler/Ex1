@@ -32,7 +32,7 @@ true: If the string is valid.
 
 false: If the string is invalid.
 
-Examples: Examples:
+Examples: 
 
 Valid: "1011b2", "135bA"
 
@@ -42,13 +42,13 @@ number2Int(String num)
 
 Transforms a well-formed string-based number in decimal (base-10) style to its decimal (base-10) integer representation.
 
-Returns: Returns:
+Returns: 
 
 The decimal value: If the input is valid.
 
 -1: If the input is invalid.
 
-Examples: Examples:
+Examples: 
 
 Input: "1011b2" → Output: 11
 
@@ -58,13 +58,13 @@ int2Number(int num, int base)
 
 Transforms an integer to string representation in given base [2,16].
 
-Returns: Returns:
+Returns: 
 
 The string representation: If inputs are valid.
 
 "": Just do not accept an invalid negative number input or an invalid base.
 
-Examples: Examples:
+Examples: 
 
 Input: 15, 16 → Output: "FbG"
 
@@ -74,13 +74,13 @@ equals(String n1, String n2)
 
 Tests whether two numbers (that may be in different systems of base) are equal.
 
-Returns: Returns:
+Returns: 
 
 true: If the numbers are equal.
 
 false: But if they are not equal or one of them is not valid.
 
-Examples: Examples:
+Examples: 
 
 Input: "1011b2", "11" → Output: true
 
@@ -90,13 +90,13 @@ maxIndex(String[] arr)
 
 Gets the index of the biggest string-formatted number in an array of string-formatted numbers.
 
-Returns: Returns:
+Returns: 
 
 The index of the largest number: If valid numbers exist.
 
 -1: If the array is empty, nil or consists only invalid numbers.
 
-Examples: Examples:
+Examples: 
 
 Input: {"1011b2", "135", "7b8"} → Output: 1
 
