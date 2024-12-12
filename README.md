@@ -1,12 +1,12 @@
-Ex1 – Number Formatter and Calculator
+# Ex1 – Number Formatter and Calculator
 
-Overview
+## Overview 
 
 This project is a solution for the Ex1 assignment, which focuses on implementing a number formatting converter and calculator. The algorithm maintains numbers in string format with the structure "number" then 'b' base , with base in the set {2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G}.
 
-Examples
+## Examples
 
-Valid Numbers
+  **Valid Numbers**
 
 1011b2 (Binary representation)
 
@@ -14,15 +14,15 @@ Valid Numbers
 
 FFbG (Hexadecimal representation)
 
-Invalid Numbers
+  **Invalid Numbers**
 
 B2, 123b, 135 b8 (Cannot be obtained due to the absence of or error in base or formatting).
 
-Implemented Functions
+## Implemented Functions
 
 The main logic resides in the Ex1 class, and the following static functions reside in:.
 
-isNumber(String a)
+ 1. **isNumber(String a)**
 
 Verifies whether a string is a valid number in the format <number><b><base>.
 
@@ -38,7 +38,7 @@ Valid: "1011b2", "135bA"
 
 Invalid: "b2", "135 b8"
 
-number2Int(String num)
+ 2. **number2Int(String num)**
 
 Transforms a well-formed string-based number in decimal (base-10) style to its decimal (base-10) integer representation.
 
@@ -54,7 +54,7 @@ Input: "1011b2" → Output: 11
 
 Input: "123bA" → Output: 123
 
-int2Number(int num, int base)
+ 3. **int2Number(int num, int base)**
 
 Transforms an integer to string representation in given base [2,16].
 
@@ -70,7 +70,7 @@ Input: 15, 16 → Output: "FbG"
 
 Input: 26, 5 → Output: "101b5"
 
-equals(String n1, String n2)
+ 4. **equals(String n1, String n2)**
 
 Tests whether two numbers (that may be in different systems of base) are equal.
 
@@ -86,7 +86,7 @@ Input: "1011b2", "11" → Output: true
 
 Input: "123bA", "7b2" → Output: false
 
-maxIndex(String[] arr)
+ 5. **maxIndex(String[] arr)**
 
 Gets the index of the biggest string-formatted number in an array of string-formatted numbers.
 
@@ -102,33 +102,33 @@ Input: {"1011b2", "135", "7b8"} → Output: 1
 
 Input: {null, "invalid"} → Output: -1
 
-Features
+## Features
 
-Validation
+ ## Validation
 
-<number><b><base.
+  '<number?<bbase
 
-Conversion
+ ## Conversion
 
-Convert string numbers to decimal integers and vice versa.
+  convert string numbers to decimal integers and vice versa.
 
-Arithmetic
+ ## Arithmetic
 
-Add and multiply numbers in decimal representation.
+  Add and multiply numbers in decimal representation.
 
-Convert the results to a specified base.
+  Convert the results to a specified base.
 
-Maximum Finder
+ ## Maximum Finder
 
-Given a list of string numbers so that each string represents an integer, determine the largest string integer in the given list.
+   Given a list of string numbers so that each string represents an integer, determine the largest string integer in the given list.
 
-How to Run
+## How to Run
 
-Setup
+ ## Setup
 
-Open your project at your favorite Java IDE (e.g., IntelliJ IDEA, Eclipse).
+  Open your project at your favorite Java IDE (e.g., IntelliJ IDEA, Eclipse).
 
-Run
+## Run
 
 Run the Ex1Main class.
 
@@ -148,7 +148,7 @@ Enter a string as number#2: 10
 
 Enter a base for output: 2
 
-Output: Output:
+Output: 
 
 1011b2 + 10 = 10101b2
 
@@ -156,7 +156,7 @@ Output: Output:
 
 Max number over: [1011b2, 10, 10101b2, 11010b2] is: 11010b2 (index: 3)
 
-Testing
+## Testing
 
 JUnit tests are provided for correctness and robustness. Some key test categories include:
 
@@ -168,7 +168,7 @@ Conversion Tests
 
 Check correctness of string to decimal, and vice-versa conversions. Arithmetic Tests Test addition and multiplication across bases. Maximum Finder Tests Ensure the return of the appropriate index of the most extreme value, for both mixed valid/invalid inputs. Edge Cases Input validation for invalid, null, or edge cases (e.g., out-of-bound bases or incorrectly-formatted strings, etc). Files Included
 
-Code Files
+## Code Files
 
 Ex1.java: Contains all the core logic.
 
