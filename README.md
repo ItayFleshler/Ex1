@@ -1,170 +1,173 @@
 # Ex1 – Number Formatter and Calculator
 
-## Overview 
+## Overview
+This project provides a solution for the Ex1 assignment, focusing on implementing a number formatting converter and calculator. The algorithm processes numbers as strings in the format `<number>b<base>`, where `<base>` belongs to the set `{2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G}`.
 
-This project is a solution for the Ex1 assignment, which focuses on implementing a number formatting converter and calculator. The algorithm maintains numbers in string format with the structure `<number><b><base>` base , with base in the set {2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G}.
+---
 
-### Examples
+## Examples
 
-  **Valid Numbers**
+### **Valid Numbers**
+- `1011b2` – Binary representation
+- `123bA` – Decimal representation with default base
+- `FFbG` – Base-G representation
 
-1011b2 (Binary representation)
+### **Invalid Numbers**
+- `B2` – Missing base specification
+- `123b` – Missing base
+- `135 b8` – Improper formatting
 
-123bA (Base 10 with default base representation)
-
-FFbG (Hexadecimal representation)
-
-  **Invalid Numbers**
-
-B2, 123b, 135 b8 (Cannot be obtained due to the absence of or error in base or formatting).
+---
 
 ## Implemented Functions
+The core logic resides in the `Ex1` class, with the following static methods:
 
-The main logic resides in the Ex1 class, and the following static functions reside in:.
+### `isNumber(String a)`
+**Purpose:** Verifies if a string is a valid number in the `<number>b<base>` format.
 
- 1. `isNumber(String a)`
+**Returns:**
+- `true` if the string is valid.
+- `false` if the string is invalid.
 
-Verifies whether a string is a valid number in the format `<number><b><base>`.
+**Examples:**
+- Input: `"1011b2"` → Output: `true`
+- Input: `"b2"` → Output: `false`
 
- #### Returns: 
+### `number2Int(String num)`
+**Purpose:** Converts a valid string-based number to its decimal (base-10) integer representation.
 
-true: If the string is valid.
+**Returns:**
+- Decimal integer if valid.
+- `-1` if invalid.
 
-false: If the string is invalid.
+**Examples:**
+- Input: `"1011b2"` → Output: `11`
+- Input: `"123bA"` → Output: `123`
 
- #### Examples: 
+### `int2Number(int num, int base)`
+**Purpose:** Converts an integer to a string representation in a given base (range: 2-16).
 
-Valid: "1011b2", "135bA"
+**Returns:**
+- String representation if valid.
+- Empty string (`""`) if input is invalid (negative number or unsupported base).
 
-Invalid: "b2", "135 b8"
+**Examples:**
+- Input: `15, 16` → Output: `"FbG"`
+- Input: `26, 5` → Output: `"101b5"`
 
- 2. `number2Int(String num)`
+### `equals(String n1, String n2)`
+**Purpose:** Compares two numbers (potentially in different bases) for equality.
 
-Transforms a well-formed string-based number in decimal (base-10) style to its decimal (base-10) integer representation.
+**Returns:**
+- `true` if the numbers are equal.
+- `false` if they are not equal or one is invalid.
 
- #### Returns: 
+**Examples:**
+- Input: `"1011b2", "11"` → Output: `true`
+- Input: `"123bA", "7b2"` → Output: `false`
 
-The decimal value: If the input is valid.
+### `maxIndex(String[] arr)`
+**Purpose:** Finds the index of the largest valid string-formatted number in an array.
 
--1: If the input is invalid.
+**Returns:**
+- Index of the largest number if valid numbers exist.
+- `-1` if the array is empty, null, or contains only invalid numbers.
 
- #### Examples: 
+**Examples:**
+- Input: `{"1011b2", "135", "7b8"}` → Output: `1`
+- Input: `{null, "invalid"}` → Output: `-1`
 
-Input: "1011b2" → Output: 11
-
-Input: "123bA" → Output: 123
-
- 3. `int2Number(int num, int base)`
-
-Transforms an integer to string representation in given base [2,16].
-
- #### Returns: 
-
-The string representation: If inputs are valid.
-
-"": Just do not accept an invalid negative number input or an invalid base.
-
- #### Examples: 
-
-Input: 15, 16 → Output: "FbG"
-
-Input: 26, 5 → Output: "101b5"
-
- 4. `equals(String n1, String n2)`
-
-Tests whether two numbers (that may be in different systems of base) are equal.
-
- #### Returns: 
-
-true: If the numbers are equal.
-
-false: But if they are not equal or one of them is not valid.
-
- #### Examples: 
-
-Input: "1011b2", "11" → Output: true
-
-Input: "123bA", "7b2" → Output: false
-
- 5. `maxIndex(String[] arr)`
-
-Gets the index of the biggest string-formatted number in an array of string-formatted numbers.
-
- #### Returns: 
-
-The index of the largest number: If valid numbers exist.
-
--1: If the array is empty, nil or consists only invalid numbers.
-
- #### Examples: 
-
-Input: {"1011b2", "135", "7b8"} → Output: 1
-
-Input: {null, "invalid"} → Output: -1
+---
 
 ## Features
 
- #### Format Validation
+### **Validation**
+- Ensures input adheres to the format `<number>b<base>`.
 
-  `<number><b><base>`
+### **Conversion**
+- Converts string-based numbers to decimal integers and vice versa.
 
- #### Conversion
+### **Arithmetic**
+- Performs addition and multiplication in decimal representation.
+- Converts results back to the specified base.
 
-  convert string numbers to decimal integers and vice versa.
+### **Maximum Finder**
+- Identifies the largest number from a list of string-formatted numbers.
 
- #### Arithmetic
-
-  Add and multiply numbers in decimal representation.
-
-  Convert the results to a specified base.
-
- #### Maximum Finder
-
-   Given a list of string numbers so that each string represents an integer, determine the largest string integer in the given list.
+---
 
 ## How to Run
 
-Run the `Ex1Main` file.
+### **Setup**
+- Open the project in your favorite Java IDE (e.g., IntelliJ IDEA, Eclipse).
 
-Interactive prompts will appear. Input numbers to check or operate on.
+### **Run**
+- Execute the `Ex1Main` class.
+- Follow interactive prompts to input numbers and specify operations or bases.
+- Type `quit` to exit the program.
 
-specify a base (one of [2,16]) for the output.
+**Sample Input and Output:**
 
-Type quit to terminate the program.
-
-### Sample Input and Output
-
-Input: 
-
+**Input:**
+```
 Enter a string as number#1: 1011b2
-
 Enter a string as number#2: 10
-
 Enter a base for output: 2
+```
 
-Output: 
-
+**Output:**
+```
 1011b2 + 10 = 10101b2
-
 1011b2 * 10 = 11010b2
-
 Max number over: [1011b2, 10, 10101b2, 11010b2] is: 11010b2 (index: 3)
+```
+
+---
 
 ## Testing
 
-JUnit tests are provided for correctness and robustness. Some key test categories include:
+### **Validation Tests**
+- **Test Name:** `isBasisNumberTest`
+- **What it tests:** Verifies valid and invalid number formats.
+- **Example:** Ensures strings like `"1b2"` are valid while `"135 b8"` are invalid.
 
-### Validation Tests
+### **Conversion Tests**
+#### `computeNumberTest`
+- **What it tests:** Validates the conversion of numbers between string and integer formats.
+- **Example:** Ensures `"1011b2"` converts to `11` and back to `"1011b2"`.
+#### `int2NumberTest`
+- **What it tests:** Tests integer-to-string conversion across various bases.
+- **Example:** Converts `15` to `"FbG"` and `26` to `"101b5"`.
 
-Valid and invalid number formats.
+### **Arithmetic Tests**
+- **Test Name:** `computeNumberTest`
+- **What it tests:** Checks equivalency of numbers and conversion integrity.
+- **Example:** Ensures `"1011b2"` is equal to `"11"` after conversion.
 
-### Conversion Tests
+### **Maximum Finder Tests**
+#### `maxIndexTest`
+- **What it tests:** Identifies the largest number's index in a mixed list of valid and invalid inputs.
+- **Example:** For `{"1011b2", "135", "7b8"}`, the maximum index is `1`.
 
-Check correctness of string to decimal, and vice-versa conversions. Arithmetic Tests Test addition and multiplication across bases. Maximum Finder Tests Ensure the return of the appropriate index of the most extreme value, for both mixed valid/invalid inputs. Edge Cases Input validation for invalid, null, or edge cases (e.g., out-of-bound bases or incorrectly-formatted strings, etc). Files Included
+### **Additional Tests**
+#### `additionalTests`
+- **What it tests:** Handles edge cases such as spaces, invalid bases, and valid conversions.
+- **Example:** Ensures `"135 b8"` fails, but `"FFbG"` returns `255`.
+#### `isNumberAdditionalTests`
+- **What it tests:** Validates strings in various formats to ensure compliance.
+- **Example:** Ensures `"ABbG"` is valid and `"1234b11"` is invalid.
+#### `number2IntAdditionalTests`
+- **What it tests:** Converts valid numbers and ensures invalid numbers return `-1`.
+- **Example:** `"FFbG"` converts to `255`, while `"ZZb16"` fails.
+#### `int2NumberAdditionalTests`
+- **What it tests:** Confirms correct conversion for integers to different bases.
+- **Example:** Converts `5` to `"101b2"` and `15` to `"FbG"`.
+
+---
 
 ## Code Files
-`Ex1.java`: Contains all the core logic.
 
-`Ex1Test.java`: Contains JUnit tests.
+- **Ex1.java:** Contains all core logic.
+- **Ex1Test.java:** Includes JUnit tests.
+- **Ex1Main.java:** Provides an interactive interface.
 
-`Ex1Main.java`: The interactive interface.
