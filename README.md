@@ -98,9 +98,6 @@ The core logic resides in the `Ex1` class, with the following static methods:
 
 ## How to Run
 
-### **Setup**
-- Open the project in your favorite Java IDE (e.g., IntelliJ IDEA, Eclipse).
-
 ### **Run**
 - Execute the `Ex1Main` class.
 - Follow interactive prompts to input numbers and specify operations or bases.
