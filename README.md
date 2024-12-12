@@ -164,7 +164,7 @@ Max number over: [1011b2, 10, 10101b2, 11010b2] is: 11010b2 (index: 3)
 
 ## Code Files
 
-- **Ex1.java:** Contains all core logic.
-- **Ex1Test.java:** Includes JUnit tests.
-- **Ex1Main.java:** Provides an interactive interface.
+- `Ex1.java`: Contains all core logic.
+- `Ex1Test.java`: Includes JUnit tests.
+- `Ex1Main.java` Provides an interactive interface.
 
