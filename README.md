@@ -107,16 +107,16 @@ The core logic resides in the `Ex1` class, with the following static methods:
 
 **Input:**
 ```
-Enter a string as number#1: 1011b2
-Enter a string as number#2: 10
-Enter a base for output: 2
+Enter a string as number#1: 1324b5
+Enter a string as number#2: 1010b2
+Enter a base for output: 15
 ```
 
 **Output:**
 ```
-1011b2 + 10 = 10101b2
-1011b2 * 10 = 11010b2
-Max number over: [1011b2, 10, 10101b2, 11010b2] is: 11010b2 (index: 3)
+1324b5 + 1010b2 = EEbF
+1324b5 * 1010b2 = 97AbF
+Max number over: [1324b5, 1010b2, EEbF, 97AbF] is: 97AbF (index: 3)
 ```
 
 ---
