@@ -126,9 +126,13 @@ public class Ex1 {
             return ""; // Return an empty string for invalid cases
         }
 
-        if (num == 0) { // Handle the case for zero
+        if (num == 0 && base == 10) {
             return "0";
         }
+
+        if (num == 0 && !(base == 10)) {
+            return "0b" + base;
+            }
 
         StringBuilder output = new StringBuilder(); // Use StringBuilder for efficient string construction
 
