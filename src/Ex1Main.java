@@ -19,9 +19,9 @@ public class Ex1Main {
             // Read the first number from user
             System.out.println("Enter a string as number#1 (or \"quit\" to end the program): ");
             num1 = sc.nextLine().trim(); // Trim removes extra spaces from the input
-            System.out.println("num1 = " + num1 + " is number: " + Ex1.isNumber(num1) + " value: " + Ex1.number2Int(num1));
 
             if (!num1.equals(quit)) { // Check if the user wants to quit
+                System.out.println("num1 = " + num1 + " is number: " + Ex1.isNumber(num1) + " value: " + Ex1.number2Int(num1));
                 // Read the second number from user
                 System.out.println("Enter a string as number#2 (or \"quit\" to end the program): ");
                 num2 = sc.nextLine().trim(); // Trim removes extra spaces from the input
