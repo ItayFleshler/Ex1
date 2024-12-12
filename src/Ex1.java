@@ -144,6 +144,8 @@ public class Ex1 {
 
             num /= base; // Reduce the number
         }
+        if (base == 10)
+            return output.reverse().toString();
         if (base < 10)
             return output.reverse() + "b" + base;
         else
